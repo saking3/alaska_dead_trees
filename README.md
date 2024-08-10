@@ -23,11 +23,11 @@ KMZ files containing the flight paths and an Jupyter notebook that uses geopanda
 The Segment Anything Model (SAM), DINOv2 Model, and ResNet-152 Model trained on ImageNet-1k data were trained using transfer learning on our labeled dataset containing labeled dead trees.
 
 ## General Workflow description
-Dataset creation/preprocessing: BinaryMaskNoiseRemoval.ipynb, HuggingFaceDatasetCreation.ipynb
+**Dataset creation/preprocessing:** BinaryMaskNoiseRemoval.ipynb, HuggingFaceDatasetCreation.ipynb
 
-Models: Contained within DINOv2Model.ipynb, SAMModel.ipynb, ResNet152Model.ipynb.
+**Models:** Contained within DINOv2Model.ipynb, SAMModel.ipynb, ResNet152Model.ipynb.
 
-Running predictions on an entire image (vs a single tile): The huggingface dataset has had all "blank" tiles (tiles with only 0 or 1 values) removed, so if you would like to tile up an whole image (including empty tiles), run predictions on it, then have it stitched back into a single image, you will need to follow the protocols in: DINOv2_PredictEntireImage.ipynb and SAM_PredictEntireImage.ipynb  
+**Running predictions on an entire image (vs a single tile):** The huggingface dataset has had all "blank" tiles (tiles with only 0 or 1 values) removed, so if you would like to tile up an whole image (including empty tiles), run predictions on it, then have it stitched back into a single image, you will need to follow the protocols in: DINOv2_PredictEntireImage.ipynb and SAM_PredictEntireImage.ipynb  
 
 ## Environment Setup
 Can pip install packages as needed. 

@@ -34,5 +34,7 @@ Can pip install packages as needed.
 
 ## References
 [SAM Model Reference](https://github.com/bnsreenu/python_for_microscopists/blob/master/331_fine_tune_SAM_mito.ipynb)
+
 [DINOv2 Model Reference](https://github.com/NielsRogge/Transformers-Tutorials/blob/master/DINOv2/Train_a_linear_classifier_on_top_of_DINOv2_for_semantic_segmentation.ipynb)
+
 [ResNet-152 Model](https://huggingface.co/microsoft/resnet-152)

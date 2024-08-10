@@ -20,17 +20,19 @@ KMZ files containing the flight paths and an Jupyter notebook that uses geopanda
 
 ## Original Modeling Methodology
 
+The Segment Anything Model (SAM), DINOv2 Model, and ResNet-152 Model trained on ImageNet-1k data were trained using transfer learning on our labeled dataset containing labeled dead trees.
 
 ## General Workflow description
 Dataset creation/preprocessing: BinaryMaskNoiseRemoval.ipynb, HuggingFaceDatasetCreation.ipynb
 
-Models: 
+Models: Contained within DINOv2Model.ipynb, SAMModel.ipynb, ResNet152Model.ipynb.
 
-Running predictions on an entire image (vs a single tile): The huggingface dataset has had all "blank" tiles (tiles with only 0 or 1 values) removed, so if you would like to tile up an image, run predictions on it, then have it stitched back into a single image, you will need to follow the protocols in:  
+Running predictions on an entire image (vs a single tile): The huggingface dataset has had all "blank" tiles (tiles with only 0 or 1 values) removed, so if you would like to tile up an whole image (including empty tiles), run predictions on it, then have it stitched back into a single image, you will need to follow the protocols in: DINOv2_PredictEntireImage.ipynb and SAM_PredictEntireImage.ipynb  
 
 ## Environment Setup
 Can pip install packages as needed. 
 
 ## References
-[]()
-[]()
+[SAM Model Reference](https://github.com/bnsreenu/python_for_microscopists/blob/master/331_fine_tune_SAM_mito.ipynb)
+[DINOv2 Model Reference](https://github.com/NielsRogge/Transformers-Tutorials/blob/master/DINOv2/Train_a_linear_classifier_on_top_of_DINOv2_for_semantic_segmentation.ipynb)
+[ResNet-152 Model](https://huggingface.co/microsoft/resnet-152)

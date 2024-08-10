@@ -2,7 +2,7 @@
 
 Deep learning algorithms to map damaged trees in forests.
 
-## Data Creation and Locations
+## Image Data Creation and Locations
 
 The data used for training these models is contained in [the following huggingface directory.](https://huggingface.co/datasets/saking3/alaska_dead_trees) 
 
@@ -14,8 +14,23 @@ For reference, failed segmentation attempts include:
 - the segment-geospatial python package
 - automatic segmentation with the SAM model.  
 
+## Location Data Creation and Locations
+
+KMZ files containing the flight paths and an Jupyter notebook that uses geopandas to view the flight paths against a map are contained within the flight_path_kmz folder. 
+
 ## Original Modeling Methodology
 
+
+## General Workflow description
+Dataset creation/preprocessing: BinaryMaskNoiseRemoval.ipynb, HuggingFaceDatasetCreation.ipynb
+
+Models: 
+
+Running predictions on an entire image (vs a single tile): The huggingface dataset has had all "blank" tiles (tiles with only 0 or 1 values) removed, so if you would like to tile up an image, run predictions on it, then have it stitched back into a single image, you will need to follow the protocols in:  
+
 ## Environment Setup
+Can pip install packages as needed. 
 
 ## References
+[]()
+[]()

@@ -2,8 +2,6 @@
 
 Deep learning algorithms for automated detection of trees damaged by spruce bark beetles in Alaskan forests.
 
----
-
 ## Overview
 
 This project benchmarks five computer vision models (two foundation models and three CNN-based architectures) for binary segmentation of dead trees in high-resolution aerial imagery, with a focus on understanding how model performance scales with training set size.
@@ -67,10 +65,8 @@ All models were trained with fully unfrozen parameters using transfer learning. 
 **Flight path data**
 - `flight_path_kmz/` — KMZ files for flight paths + a geopandas visualization notebook
 
-## Environment Setup
+### Environment Setup
 Can pip install packages as needed. 
-
----
 
 ## Results
 
@@ -94,7 +90,7 @@ Can pip install packages as needed.
 | 1000 | 0.143 | **0.557** | 0.422 | 0.436 | 0.448 |
 | 5000 | 0.155 | **0.597** | 0.345 | 0.525 | 0.532 |
 
-## Key Findings
+### Key Findings
 
 - **DINOv2 is the strongest performer overall**, leading on accuracy, mean IoU, and true positive/negative rates across nearly all training set sizes.
 
@@ -107,22 +103,12 @@ Can pip install packages as needed.
 - **CNN-based models improve predictably with data.** ResNet-152 (w/o pretraining) and CNN-53 both trend upward with dataset size and converge near DINOv2 performance at 5,000 images.
 
 
-## Future Work
+### Future Work
 
-- **Diversify training data geographically.** Current training images are from a limited spatial extent. Adding imagery from sites with different lighting conditions, terrain, and beetle damage stages would improve model robustness and generalizability.
+- **Diversify training data geographically.** Current training images are from a limited spatial extent. Adding imagery from sites with different lighting conditions, terrain, etc, could make the model more robust. 
 
-- **Evaluate SAM2.** SAM2 was released after this study was conducted and would likely outperform the original SAM — worth a direct comparison.
+- **Evaluate SAM2.** SAM2 was released after this study was conducted and would likely outperform the original SAM.
 
-- **Expand to multi-class damage staging.** Current task is binary (dead/not dead). A multi-class approach distinguishing early, mid, and late-stage beetle damage would be more operationally useful for forest management applications.
-
-## General Workflow description
-**Dataset creation/preprocessing:** BinaryMaskNoiseRemoval.ipynb, HuggingFaceDatasetCreation.ipynb
-
-**Models:** Contained within DINOv2Model.ipynb, SAMModel.ipynb, Resnet152model.ipynb, RAWResnet152model.ipynb, and CNN50.ipynb.
-
-**Running predictions on an entire image (vs a single tile):** The huggingface dataset has had all "blank" tiles (tiles with only 0 or 1 values) removed, so if you would like to tile up an whole image (including empty tiles), run predictions on it, then have it stitched back into a single image, you will need to follow the protocols in: DINOv2_PredictEntireImage.ipynb and SAM_PredictEntireImage.ipynb  
-
----
 
 ## References
 [SAM Model Reference](https://github.com/bnsreenu/python_for_microscopists/blob/master/331_fine_tune_SAM_mito.ipynb)

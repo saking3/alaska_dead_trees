@@ -66,7 +66,15 @@ All models were trained with fully unfrozen parameters using transfer learning. 
 - `flight_path_kmz/` — KMZ files for flight paths + a geopandas visualization notebook
 
 ### Environment Setup
-Can pip install packages as needed. 
+## Setup
+
+> **Note:** The `pip` command below installs the CPU build of PyTorch. If you are running on GPU, install the correct CUDA-enabled build for your system from [pytorch.org](https://pytorch.org/get-started/locally/) before running the rest.
+
+```bash
+pip install torch torchvision transformers datasets albumentations patchify monai scikit-learn opencv-python tqdm evaluate geopandas rasterio
+```
+
+Core dependencies: `torch`, `torchvision` (model training and inference), `transformers` (DINOv2 and SAM via HuggingFace), `datasets` (loading `saking3/alaska_dead_trees`), `albumentations` (image augmentation), `patchify` (tiling for whole-image prediction), `monai` (DiceCELoss for SAM fine-tuning), `evaluate` (mean IoU metric), `scikit-learn` (confusion matrix), `opencv-python` (mask resizing), `tqdm` (progress bars), `geopandas`, `rasterio` (displaying KMZ and reading GeoTIFFs)
 
 ## Results
 
